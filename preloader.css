@@ -1,0 +1,63 @@
+/*de citit sass-scss.ru p. 4, 6*/
+/*este posibilitate de a crea un mix de valori
+le cream dupa variabile*/
+body {
+  background-color: #333;
+}
+
+/*selectori incorporati*/
+/* animatia se poate scrie in selector */
+#preloader {
+  width: 100px;
+  height: 100px;
+  background-color: #004d00;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+
+#preloader div {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  float: left;
+  /*margin: $size * 0.016;*/
+  margin: 1.66667px;
+  /*se scrie & pentru a inlatura spatiul intre div si :nth-child care apare automat */
+}
+
+#preloader div:nth-child(1) {
+  -webkit-animation: flash 5s infinite;
+          animation: flash 5s infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#preloader div:nth-child(2) {
+  -webkit-animation: flash 5s infinite;
+          animation: flash 5s infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+@-webkit-keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=preloader.css.map */

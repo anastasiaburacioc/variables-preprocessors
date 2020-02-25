@@ -1,0 +1,35 @@
+/*instalam extensia Live Sass Compiler
+activam butonul de jos watch Sass
+in HTML conectam button.CSS nu button.SCSS
+daca avem o eroare nu compileaza 
+
+genereaza cod compatibil cu diferite browsere
+
+
+functii de culori (doar pentru SCSS)
+lighten($color(variabila culorii), %(cu cate procente mai deschis)
+darken ($color(variabila culorii), %(cu cate procente mai inchis)
+*/
+/*variabile in SCSS se scriu altfel cu $*/
+$color-light: green;
+$color-dark: #333;
+$size:100px;
+
+body{
+    background-color: $color-dark;
+    margin: 100px;
+}
+button{
+    width: $size;
+    height: $size;
+    font-size: $size * 0.25;/*calculam 25px */
+    border-radius: 50%;
+    background-image: linear-gradient(lighten($color-light, 55%), darken($color-light,14%), lighten($color-light, 55%));
+    color: azure;
+    border: 3px solid lightgreen;
+    box-shadow: 0 0 5px 2px #111;
+}
+button:hover{
+    background-image: linear-gradient( darkgreen, lightgreen, darkgreen);
+    border: 3px solid darkgreen;
+}

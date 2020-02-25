@@ -1,0 +1,57 @@
+/*de citit sass-scss.ru p. 4, 6*/
+
+//variabile//
+$lcolor: green;
+$dcolor: #333;
+$size: 100px;
+
+/*este posibilitate de a crea un mix de valori
+le cream dupa variabile*/
+@mixin center {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+
+body {
+  background-color: $dcolor;
+}
+
+/*selectori incorporati*/
+/* animatia se poate scrie in selector */
+#preloader {
+  width: $size;
+  height: $size;
+  background-color: darken($lcolor, 10%);
+  @include center;
+
+  div {
+    width: $size * 0.3;
+    height: $size * 0.3;
+    background-color: $lcolor;
+    float: left;
+    /*margin: $size * 0.016;*/
+    margin: $size * 0.1 / 6;
+    /*se scrie & pentru a inlatura spatiul intre div si :nth-child care apare automat */
+    &:nth-child(1) {
+      animation: flash 5s infinite;
+      animation-delay: 1s;
+    }
+    &:nth-child(2) {
+      animation: flash 5s infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes flash {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}

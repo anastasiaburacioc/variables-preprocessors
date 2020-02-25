@@ -1,0 +1,41 @@
+/*declaram cateva variabile
+in CSS variabilele incep cu --  apoi denumirea pe care o poti inventa*/
+:root{
+    --color: #458745;
+    --bg-color: #333;
+    --size: 2em;
+    --font: Arial;
+
+    --mobile: 1000px;
+}
+button{
+    background-color: var(--bg-color);
+    font-family: var(--font);
+    padding: var(--size);
+    color: var(--color);
+    font-size: calc(0.7 * var(--size));
+}
+@media (max-width: 1000px/* daca punem asa var(--mobile) nu toate browserele inteleg*/){
+    button span{
+        display: none;
+    }
+}
+
+/*css preprocessors
+SCSS, SASS, LESS, Stylus
+   CSS+superpowers
+   CSS+programing
+nici un browser nu suporta direct 
+style.scss > compilator  >traduce in css > HTML
+compilatorul e in JS, php, pyton
+pentru VSCode extensie Live SASS Compiler
+
+in mapa cream index.html
+              style.css
+            si style.scss
+            dupa ce pornim watch SASS va mai aparea un fisier .css.map
+
+site-uri oficiale
+sass-scss.ru
+sass-lang.com
+*/
